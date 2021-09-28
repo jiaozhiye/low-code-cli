@@ -100,6 +100,7 @@ export default defineComponent({
   height: 100%;
   position: relative;
   border-right: 1px solid $borderColor;
+  background-color: $backgroundColor;
   transition: width 0.3s ease;
   .scroll {
     height: 100%;
@@ -118,18 +119,16 @@ export default defineComponent({
     width: 14px;
     height: 30px;
     border: 1px solid $borderColor;
-    border-left-color: #fff;
+    border-left-color: $backgroundColor;
     border-top-right-radius: $borderRadius;
     border-bottom-right-radius: $borderRadius;
+    background-color: $backgroundColor;
     text-align: center;
     line-height: 30px;
     font-size: $textSizeSecondary;
     cursor: pointer;
     box-sizing: border-box;
     transition: all 0.3s ease;
-    &:hover {
-      background-color: $backgroundColor;
-    }
   }
 }
 </style>

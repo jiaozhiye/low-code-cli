@@ -14,7 +14,6 @@ export default defineComponent({
   computed: {
     ...mapState('editer', ['formPanelList']),
     list() {
-      console.log(1234);
       return this.formPanelList.find((x) => x.id === this.id).list || [];
     },
   },
@@ -22,35 +21,20 @@ export default defineComponent({
     ...mapActions('editer', ['createFormItemList']),
   },
   mounted() {
-    const $dom = this.$refs['form-wrap'].querySelector('.qm-form .el-row');
-    this.sortable = new Sortable($dom, {
+    const $elRow = this.$refs['form-wrap'].querySelector('.qm-form .el-row');
+    this.sortable = new Sortable($elRow, {
       group: 'form-panel',
+      filter: '.btns',
       animation: 150,
       onEnd: (ev) => {
-        console.log(123, this.list);
         const _list = [...this.list];
-        const item = _list[ev.oldIndex];
-        // 0, 1, 2, 3
-        // 0, 2, 1, 3
-        // const result = [];
-        // this.list.forEach((x, i) => {
-        //   result
-        // })
-        // const item = _list[ev.oldIndex];
-        // _list.splice(ev.oldIndex, 1)
-        // _list.splice(ev.oldIndex, 1, item)
-        // console.log(123, ev);
-        // 前 -> 后
-        if (ev.newIndex > ev.oldIndex) {
-          _list.splice(ev.newIndex, 0, item);
-          _list.splice(ev.oldIndex, 1);
+        // **** 重要 ****
+        if (!ev.pullMode) {
+          _list.splice(ev.newIndex, 0, _list.splice(ev.oldIndex, 1)[0]);
         }
-        // 后 -> 前
-        if (ev.newIndex < ev.oldIndex) {
-          _list.splice(ev.oldIndex, 1);
-          _list.splice(ev.newIndex, 0, item);
-        }
-        this.createFormItemList({ id: this.id, list: _list });
+        this.createFormItemList({ id: this.id, list: [] });
+        // **************
+        this.$nextTick(() => this.createFormItemList({ id: this.id, list: _list }));
       },
     });
   },
@@ -69,9 +53,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.form-wrapper {
+  margin-bottom: -12px;
   :deep(.el-row) {
-    min-height: 30px;
+    min-height: 44px;
+    .form-item {
+      line-height: 32px;
+    }
   }
 }
 </style>

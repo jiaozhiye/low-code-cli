@@ -20,10 +20,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .drag-panel {
-  min-height: 30px;
   padding: 5px;
   border: 1px dashed $borderColor;
-  margin-bottom: $moduleMargin;
+  margin-bottom: 5px;
   position: relative;
   box-sizing: border-box;
   &:hover {

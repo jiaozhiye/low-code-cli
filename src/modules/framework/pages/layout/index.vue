@@ -2,6 +2,7 @@
   <div class="wrapper">
     <SIdeBar />
     <WorkSpace />
+    <Setting />
   </div>
 </template>
 
@@ -10,10 +11,11 @@ import { defineComponent } from 'vue';
 
 import SIdeBar from '@/components/SideBar';
 import WorkSpace from '@/components/WorkSpace';
+import Setting from '@/components/Setting';
 
 export default defineComponent({
   name: 'Layout',
-  components: { SIdeBar, WorkSpace },
+  components: { SIdeBar, WorkSpace, Setting },
 });
 </script>
 

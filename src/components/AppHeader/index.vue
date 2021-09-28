@@ -52,7 +52,7 @@ export default defineComponent({
     line-height: 50px;
     font-size: 20px;
     a {
-      color: #fff;
+      color: $primaryColor;
     }
   }
   .nav {

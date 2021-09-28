@@ -89,10 +89,11 @@ export default defineComponent({
 }
 .content {
   display: flex;
-  padding: $modulePadding;
+  padding: $modulePadding 0;
   .form-panel {
     padding: $modulePadding;
     border: 1px dashed $borderColor;
+    background-color: #fff;
     cursor: move;
     box-sizing: border-box;
   }
@@ -104,6 +105,7 @@ export default defineComponent({
     line-height: 1.5;
     padding: 5px;
     border: 1px dashed $borderColor;
+    background-color: #fff;
     cursor: move;
     box-sizing: border-box;
   }
