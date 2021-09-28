@@ -1,0 +1,87 @@
+/*
+ * @Author: 焦质晔
+ * @Date: 2021-02-14 15:02:26
+ * @Last Modified by: 焦质晔
+ * @Last Modified time: 2021-09-26 12:54:12
+ */
+// 全局主色
+$primaryColor: $THEME_COLOR;
+
+// 成功色
+$successColor: #52c41a;
+
+// 警告色
+$warningColor: #faad14;
+
+// 错误色
+$errorColor: #f5222d;
+
+// 标题色
+$headerColor: rgba(0, 0, 0, 0.85);
+
+// 主文本色
+$textColor: rgba(0, 0, 0, 0.85);
+
+// 次文本色
+$textColorSecondary: rgba(0, 0, 0, 0.65);
+
+// 失效色
+$disabledColor: rgba(0, 0, 0, 0.25);
+
+// 文本大小
+$textSize: 14px;
+
+// 次文本大小
+$textSizeSecondary: 12px;
+
+// 主边框色
+$borderColor: #d9d9d9;
+
+// 次边框色
+$borderColorSecondary: #e8e8e8;
+
+// 组件/浮层圆角
+$borderRadius: 2px;
+
+// 模块之间距离
+$moduleMargin: 10px;
+$modulePadding: 10px;
+
+// 浮层阴影
+$shadow-up: 0 -2px 8px rgba(0, 0, 0, 0.15);
+$shadow-down: 0 2px 8px rgba(0, 0, 0, 0.15);
+$shadow-left: -2px 0 8px rgba(0, 0, 0, 0.15);
+$shadow-right: 2px 0 8px rgba(0, 0, 0, 0.15);
+$boxShadow: $shadow-down;
+
+// 主背景色
+$backgroundColor: #f2f2f2;
+
+// 次背景色
+$backgroundColorSecondary: #f5f5f5;
+
+// header 背景色
+$headerBgColor: #001529;
+
+// Logo 背景色
+$logoBgColor: #1f1f1f;
+
+// Sidebar 侧栏颜色
+$menuText: rgba(255, 255, 255, 0.65);
+$menuActiveText: #fff;
+$subMenuActiveText: #fff;
+
+$menuBg: #272b2e;
+$menuHover: #292929;
+
+$subMenuBg: #1a1a1a;
+$subMenuHover: #2e2e2e;
+
+// AllMenu 划出面板背景色
+$allMenuBgColor: #313538;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  theme: $primaryColor;
+}
