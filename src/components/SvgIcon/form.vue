@@ -8,7 +8,6 @@
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
   >
-    <title>Form</title>
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <g id="Form">
         <g id="数据录入/Form表单/Light/标题-必填" transform="translate(0.000000, 3.000000)">

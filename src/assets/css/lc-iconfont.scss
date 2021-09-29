@@ -1,0 +1,46 @@
+/*
+ * @Author: 焦质晔
+ * @Date: 2021-02-14 15:02:07
+ * @Last Modified by: 焦质晔
+ * @Last Modified time: 2021-09-29 12:04:26
+ */
+@font-face {
+  font-family: 'lc-iconfont';
+  src: url('../fonts/lc-iconfont.woff?t=1632887309519') format('woff'),
+    /* chrome, firefox */ url('../fonts/lc-iconfont.ttf?t=1632887309519') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+}
+
+.lc-iconfont {
+  font-family: 'lc-iconfont' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  color: $textColorSecondary;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lc-icon-baocun:before {
+  content: '\e8c8';
+}
+
+.lc-icon-empty:before {
+  content: '\e62a';
+}
+
+.lc-icon-code:before {
+  content: '\e615';
+}
+
+.lc-icon-yulan:before {
+  content: '\e7b9';
+}
+
+.lc-icon-ios-redo:before {
+  content: '\e715';
+}
+
+.lc-icon-ios-undo:before {
+  content: '\e78b';
+}

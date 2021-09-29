@@ -1,5 +1,9 @@
 <template>
-  <div class="nature-space"></div>
+  <div class="nature-space">
+    <div class="scroll">
+      <div style="height: 1000px">asdasdasdasdasd asdasdasdsd asdasdasda asdasdasd</div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -18,5 +22,11 @@ export default defineComponent({
   flex: 1;
   height: 100%;
   background-color: #fff;
+  .scroll {
+    width: 240px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }
 </style>

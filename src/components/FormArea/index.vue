@@ -9,7 +9,7 @@
     :sort="false"
   >
     <template #item="{ element }">
-      <div :data-name="element.name" class="form-panel">
+      <div :data-name="element.name" class="form-panel" title="拖动创建表单">
         <FormSvg />
       </div>
     </template>
