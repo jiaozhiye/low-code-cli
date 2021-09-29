@@ -5,7 +5,7 @@
     placement="bottom-start"
     @command="languageChangeHandle"
   >
-    <i class="iconfont icon-earth" />
+    <i class="iconfont icon-translate" />
     <template v-slot:dropdown>
       <el-dropdown-menu>
         <el-dropdown-item :disabled="lang === 'zh-cn'" command="zh-cn">
@@ -24,7 +24,7 @@
  * @Author: 焦质晔
  * @Date: 2020-04-30 15:17:48
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-06-09 14:09:11
+ * @Last Modified time: 2021-09-29 10:09:03
  */
 import { defineComponent } from 'vue';
 import { mapState, mapActions } from 'vuex';
@@ -53,7 +53,7 @@ export default defineComponent({
   height: 26px;
   align-items: center;
   justify-content: center;
-  .icon-earth {
+  .icon-translate {
     color: $textColorSecondary;
     font-size: 20px;
     cursor: pointer;

@@ -15,7 +15,8 @@
     </div>
     <div class="setting">
       <ScreenFull />
-      <DisplayClock />
+      <HelperDoc />
+      <UserCenter />
     </div>
   </div>
 </template>
@@ -25,11 +26,12 @@ import { defineComponent } from 'vue';
 import config from '@/config';
 
 import ScreenFull from '@/layout/modules/ScreenFull';
-import DisplayClock from '../DisplayClock';
+import HelperDoc from '@/layout/modules/HelperDoc';
+import UserCenter from '@/pages/userCenter/index';
 
 export default defineComponent({
   name: 'AppHeader',
-  components: { ScreenFull, DisplayClock },
+  components: { ScreenFull, HelperDoc, UserCenter },
   data() {
     return {};
   },
@@ -75,14 +77,19 @@ export default defineComponent({
     height: 100%;
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 6px;
     :deep(.header__screen-full) {
       .iconfont {
         color: #fff;
       }
     }
-    :deep(.clock-wrapper) {
-      color: #fff;
+    :deep(.header__help-doc) {
+      .iconfont {
+        color: #fff;
+      }
+    }
+    .header__user-center {
+      margin-left: 4px;
     }
   }
 }

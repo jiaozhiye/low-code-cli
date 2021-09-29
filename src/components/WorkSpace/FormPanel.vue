@@ -59,6 +59,7 @@ export default defineComponent({
     min-height: 44px;
     .form-item {
       line-height: 32px;
+      margin-left: 20px;
     }
   }
 }

@@ -2,7 +2,7 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 13:18:02
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-09-26 13:37:17
+ * @Last Modified time: 2021-09-29 09:55:48
  */
 export default {
   name: 'en',
@@ -49,6 +49,10 @@ export default {
       large: '大尺寸',
       medium: '中等',
       small: '小尺寸',
+    },
+    helperDoc: {
+      helpDoc: '帮助文档',
+      useManual: '使用手册',
     },
     login: {
       title: '系统登录',
