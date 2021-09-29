@@ -1,5 +1,5 @@
 <template>
-  <div>asdasd</div>
+  <div>组件属性</div>
 </template>
 
 <script>

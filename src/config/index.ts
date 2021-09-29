@@ -2,7 +2,7 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 12:43:43
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-09-29 09:58:56
+ * @Last Modified time: 2021-09-29 13:40:11
  */
 import config from '../../config/app.conf';
 import { t } from '@/locale';
@@ -19,6 +19,7 @@ type IConfig = {
   maxCacheNum: number;
   showBreadcrumb: boolean;
   showScreenFull: boolean;
+  showHelperDoc: boolean;
   showCustomTheme: boolean;
   showLangSelect: boolean;
   showSizeSelect: boolean;

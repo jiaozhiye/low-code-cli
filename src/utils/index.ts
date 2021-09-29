@@ -2,7 +2,7 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 14:22:31
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-09-28 14:54:13
+ * @Last Modified time: 2021-09-29 14:15:39
  */
 import { QmMessageBox, QmNotification, QmMessage } from '@jiaozhiye/qm-design';
 import { debounce, throttle, round } from 'lodash-es';
@@ -172,4 +172,23 @@ export const getParentNode = (el: HTMLElement, selector: string): Nullable<HTMLE
   }
 
   return null;
+};
+
+/**
+ * @description 判断目标元素是否为参考节点的后代
+ * @param {HTMLNode} el 目标元素
+ * @param {HTMLNode} container 目标节点
+ * @returns boolean
+ */
+export const contains = (el: HTMLElement, container: HTMLElement): boolean => {
+  let parent = el;
+
+  while (parent) {
+    if (parent === container) {
+      return true;
+    }
+    parent = parent.parentNode as HTMLElement;
+  }
+
+  return false;
 };

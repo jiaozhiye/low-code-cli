@@ -1,6 +1,8 @@
 <script>
 import { defineComponent } from 'vue';
 import { mapState, mapActions } from 'vuex';
+import addEventListener from 'add-dom-event-listener';
+import { getParentNode, contains } from '@/utils';
 
 import Sortable from 'sortablejs';
 
@@ -19,27 +21,43 @@ export default defineComponent({
   },
   methods: {
     ...mapActions('editer', ['createFormItemList']),
+    sortableHandle($dom) {
+      this.sortable = new Sortable($dom, {
+        group: 'form-panel',
+        filter: '.btns',
+        animation: 150,
+        onEnd: (ev) => {
+          const _list = [...this.list];
+          // **** 重要 ****
+          if (!ev.pullMode) {
+            _list.splice(ev.newIndex, 0, _list.splice(ev.oldIndex, 1)[0]);
+          }
+          this.createFormItemList({ id: this.id, list: [] });
+          // **************
+          this.$nextTick(() => this.createFormItemList({ id: this.id, list: _list }));
+        },
+      });
+    },
+    clickHandle(ev) {
+      ev.stopPropagation();
+      const $target = getParentNode(ev.target, 'el-col');
+      if ($target && contains($target, ev.currentTarget)) {
+        const fieldName = $target.id;
+        console.log(123, this.id, fieldName);
+      }
+    },
+    bindEvent($dom) {
+      this.clickEvent = addEventListener($dom, 'click', this.clickHandle);
+    },
   },
   mounted() {
     const $elRow = this.$refs['form-wrap'].querySelector('.qm-form .el-row');
-    this.sortable = new Sortable($elRow, {
-      group: 'form-panel',
-      filter: '.btns',
-      animation: 150,
-      onEnd: (ev) => {
-        const _list = [...this.list];
-        // **** 重要 ****
-        if (!ev.pullMode) {
-          _list.splice(ev.newIndex, 0, _list.splice(ev.oldIndex, 1)[0]);
-        }
-        this.createFormItemList({ id: this.id, list: [] });
-        // **************
-        this.$nextTick(() => this.createFormItemList({ id: this.id, list: _list }));
-      },
-    });
+    this.sortableHandle($elRow);
+    this.bindEvent($elRow);
   },
   beforeUnmount() {
     this.sortable?.destroy();
+    this.clickEvent?.remove();
   },
   render() {
     const { id, list } = this;
