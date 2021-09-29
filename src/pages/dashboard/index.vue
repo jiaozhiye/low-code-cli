@@ -1,5 +1,5 @@
 <template>
-  <div>概览页</div>
+  <div class="welcome">欢迎使用启明低代码平台</div>
 </template>
 
 <script>
@@ -12,3 +12,11 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.welcome {
+  padding-top: 35vh;
+  text-align: center;
+  font-size: 30px;
+}
+</style>

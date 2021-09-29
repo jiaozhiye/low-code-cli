@@ -33,12 +33,11 @@ export default defineComponent({
   .icon {
     display: none;
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     bottom: -12px;
     text-align: center;
-    line-height: 24px;
-    font-size: 15px;
+    line-height: 22px;
     border: 1px solid $borderColorSecondary;
     border-radius: 50%;
     background-color: #fff;

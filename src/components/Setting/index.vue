@@ -1,7 +1,7 @@
 <template>
   <div class="setting" :style="styles">
     <ActionBar />
-    <NatureSpace />
+    <ActionPanel />
     <i
       class="arrow"
       :class="[!collapse ? 'el-icon-d-arrow-right' : 'el-icon-d-arrow-left']"
@@ -14,11 +14,11 @@
 import { defineComponent } from 'vue';
 
 import ActionBar from '../ActionBar';
-import NatureSpace from '../NatureSpace';
+import ActionPanel from '../ActionPanel';
 
 export default defineComponent({
   name: 'Setting',
-  components: { ActionBar, NatureSpace },
+  components: { ActionBar, ActionPanel },
   data() {
     return {
       collapse: false,
