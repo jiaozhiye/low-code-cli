@@ -28,7 +28,7 @@ export default defineComponent({
   },
   mounted() {
     // 获取数据字典值
-    // this.createDictData();
+    this.createDictData();
     // 获取收藏导航
     // this.createStarMenuList();
     // 获取常用导航

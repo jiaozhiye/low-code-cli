@@ -13,7 +13,7 @@ export default defineComponent({
   },
   methods: {
     ...mapActions('editer', ['createFormPanelList']),
-    QmFormRender(item) {
+    FormRender(item) {
       return (
         <DragPanel>
           <FormPanel id={item.id} />

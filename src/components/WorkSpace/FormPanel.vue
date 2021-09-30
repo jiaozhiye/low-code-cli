@@ -1,6 +1,7 @@
 <script>
 import { defineComponent } from 'vue';
 import { mapState, mapActions } from 'vuex';
+import omit from 'omit.js';
 import addEventListener from 'add-dom-event-listener';
 import { getParentNode, contains } from '@/utils';
 
@@ -19,6 +20,12 @@ export default defineComponent({
     ...mapState('editer', ['formPanelList', 'current']),
     list() {
       return this.formPanelList.find((x) => x.id === this.id).list || [];
+    },
+    formParams() {
+      return omit(
+        this.formPanelList.find((x) => x.id === this.id),
+        ['id', 'name']
+      );
     },
   },
   watch: {
@@ -84,7 +91,7 @@ export default defineComponent({
       }
     },
     dbClickHandle() {
-      this.createCurrentAction({ id: this.id, name: 'QmForm' });
+      this.createCurrentAction({ id: this.id, name: 'Form' });
     },
     bindEvent() {
       this.dbClickEvent = addEventListener(this.$formWrap, 'dblclick', this.dbClickHandle);
@@ -105,11 +112,11 @@ export default defineComponent({
     this.sortable = null;
   },
   render() {
-    const { id, list } = this;
+    const { id, formParams } = this;
     return (
       <div ref="form-wrap" class="form-wrapper" id={id}>
         <div style="margin-bottom: -12px;">
-          <qm-form list={list} />
+          <qm-form {...formParams} />
         </div>
       </div>
     );

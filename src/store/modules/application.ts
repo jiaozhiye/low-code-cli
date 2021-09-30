@@ -2,7 +2,7 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 13:47:03
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-09-13 19:03:35
+ * @Last Modified time: 2021-09-30 14:12:31
  */
 import { RouteRecordRaw } from 'vue-router';
 import { uniqWith, isEqual } from 'lodash-es';
@@ -226,19 +226,20 @@ const actions = {
     if (+new Date() - lastTime < 24 * 3600 * 1000) return;
     // 数据
     let data: Record<string, Array<Dictionary> | number> = {};
-    if (process.env.MOCK_DATA === 'true') {
-      data = { _t: +new Date(), ...localDict };
-    } else {
-      const res: any = await getAllDict({});
-      if (res.code === 200) {
-        // 数据字典规则：如果有重复的 Code，服务端覆盖客户端
-        data = {
-          _t: +new Date(),
-          ...localDict,
-          ...res.data.dict,
-        };
-      }
-    }
+    // if (process.env.MOCK_DATA === 'true') {
+    //   data = { _t: +new Date(), ...localDict };
+    // } else {
+    //   const res: any = await getAllDict({});
+    //   if (res.code === 200) {
+    //     // 数据字典规则：如果有重复的 Code，服务端覆盖客户端
+    //     data = {
+    //       _t: +new Date(),
+    //       ...localDict,
+    //       ...res.data.dict,
+    //     };
+    //   }
+    // }
+    data = { _t: +new Date(), ...localDict };
     // 数据字典本地存储
     localStorage.setItem('dict', JSON.stringify(data));
     // vuex 状态存储
