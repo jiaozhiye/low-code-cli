@@ -13,7 +13,7 @@ export default defineComponent({
   },
   methods: {
     ...mapActions('editer', ['createFormPanelList']),
-    ['qm-form_fn'](item) {
+    QmFormRender(item) {
       return (
         <DragPanel>
           <FormPanel id={item.id} />
@@ -42,7 +42,7 @@ export default defineComponent({
           {...draggableProps}
           v-slots={{
             item: ({ element }) => {
-              return this[`${element.name}_fn`]?.(element);
+              return this[`${element.name}Render`]?.(element);
             },
           }}
         />

@@ -2,9 +2,10 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 13:47:03
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-09-28 16:33:04
+ * @Last Modified time: 2021-09-30 12:39:03
  */
 import * as types from '../types';
+import { isEqual } from 'lodash';
 import config from '@/config';
 
 type IFormPanel = {
@@ -22,13 +23,17 @@ type IState = {
   formPanelTemplate: IFormPanel[];
   formItemTemplate: IFormItem[];
   formPanelList: IFormPanel[];
+  current: {
+    id: string;
+    name: string;
+  };
 };
 
 // state
 const state = {
   formPanelTemplate: [
     {
-      name: 'qm-form',
+      name: 'QmForm',
     },
   ],
   formItemTemplate: [
@@ -42,32 +47,46 @@ const state = {
     },
   ],
   formPanelList: [],
+  current: {
+    id: '',
+    name: '',
+  },
 } as IState;
 
 // actions
 const actions = {
-  createFormPanelList({ commit, state }, params): void {
+  createFormPanelList({ commit, state }, params) {
     commit({
       type: types.FORM_PANEL,
       data: params || [],
     });
   },
-  createFormItemList({ commit, state }, params): void {
+  createFormItemList({ commit, state }, params) {
     commit({
       type: types.FORM_ITEM,
       data: params.list,
       id: params.id,
     });
   },
+  createCurrentAction({ commit, state }, params) {
+    if (isEqual(state.current, params)) return;
+    commit({
+      type: types.CURRENT_ACTION,
+      data: params,
+    });
+  },
 };
 
 // mutations
 const mutations = {
-  [types.FORM_PANEL](state, { data }): void {
+  [types.FORM_PANEL](state, { data }) {
     state.formPanelList = data;
   },
-  [types.FORM_ITEM](state, { data, id }): void {
+  [types.FORM_ITEM](state, { data, id }) {
     state.formPanelList.find((x) => x.id === id).list = data;
+  },
+  [types.CURRENT_ACTION](state, { data }) {
+    state.current = data;
   },
 };
 

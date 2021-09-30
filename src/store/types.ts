@@ -2,7 +2,7 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 13:48:27
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-09-28 15:30:28
+ * @Last Modified time: 2021-09-30 12:24:47
  */
 // app
 export const LOGININFO = 'LOGININFO';
@@ -29,3 +29,4 @@ export const THEME = 'THEME';
 // editer
 export const FORM_PANEL = 'FORM_PANEL';
 export const FORM_ITEM = 'FORM_ITEM';
+export const CURRENT_ACTION = 'CURRENT_ACTION';

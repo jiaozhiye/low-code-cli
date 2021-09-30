@@ -10,19 +10,29 @@ export default defineComponent({
   name: 'FormPanel',
   props: ['id'],
   data() {
+    this.$formWrap = null;
+    this.$elRow = null;
     this.sortable = null;
     return {};
   },
   computed: {
-    ...mapState('editer', ['formPanelList']),
+    ...mapState('editer', ['formPanelList', 'current']),
     list() {
       return this.formPanelList.find((x) => x.id === this.id).list || [];
     },
   },
+  watch: {
+    current(next) {
+      this.$nextTick(() => {
+        this.clearHandle();
+        this.createAvtive(next);
+      });
+    },
+  },
   methods: {
-    ...mapActions('editer', ['createFormItemList']),
-    sortableHandle($dom) {
-      this.sortable = new Sortable($dom, {
+    ...mapActions('editer', ['createFormItemList', 'createCurrentAction']),
+    sortableHandle() {
+      this.sortable = new Sortable(this.$elRow, {
         group: 'form-panel',
         filter: '.btns',
         animation: 150,
@@ -34,36 +44,73 @@ export default defineComponent({
           }
           this.createFormItemList({ id: this.id, list: [] });
           // **************
-          this.$nextTick(() => this.createFormItemList({ id: this.id, list: _list }));
+          this.$nextTick(() => this.createFormItemList({ id: this.id, list: _list })).then(() =>
+            this.createAvtive(this.current)
+          );
         },
       });
+    },
+    createAvtive({ id, name }) {
+      if (id === this.id) {
+        return this.$formWrap.classList.add('actived');
+      }
+      const item = this.list.find((x) => x.fieldName === id);
+      if (item?.type === name) {
+        Array.from(this.$elRow.children)
+          .find((x) => x.id === id)
+          .classList.add('actived');
+      }
+    },
+    clearHandle() {
+      const $allCols = this.$elRow.children;
+      for (let i = 0; i < $allCols.length; i++) {
+        $allCols[i].classList.remove('actived');
+      }
+      this.$formWrap.classList.remove('actived');
+    },
+    getDoms() {
+      this.$formWrap = this.$refs['form-wrap'];
+      this.$elRow = this.$formWrap.querySelector('.qm-form .el-row');
     },
     clickHandle(ev) {
       ev.stopPropagation();
       const $target = getParentNode(ev.target, 'el-col');
       if ($target && contains($target, ev.currentTarget)) {
         const fieldName = $target.id;
-        console.log(123, this.id, fieldName);
+        if (fieldName) {
+          const name = this.list.find((x) => x.fieldName === fieldName).type;
+          this.createCurrentAction({ id: fieldName, name });
+        }
       }
     },
-    bindEvent($dom) {
-      this.clickEvent = addEventListener($dom, 'click', this.clickHandle);
+    dbClickHandle() {
+      this.createCurrentAction({ id: this.id, name: 'QmForm' });
+    },
+    bindEvent() {
+      this.dbClickEvent = addEventListener(this.$formWrap, 'dblclick', this.dbClickHandle);
+      this.clickEvent = addEventListener(this.$elRow, 'click', this.clickHandle);
     },
   },
   mounted() {
-    const $elRow = this.$refs['form-wrap'].querySelector('.qm-form .el-row');
-    this.sortableHandle($elRow);
-    this.bindEvent($elRow);
+    this.getDoms();
+    this.sortableHandle();
+    this.bindEvent();
   },
   beforeUnmount() {
     this.sortable?.destroy();
+    this.dbClickEvent?.remove();
     this.clickEvent?.remove();
+    this.$formWrap = null;
+    this.$elRow = null;
+    this.sortable = null;
   },
   render() {
     const { id, list } = this;
     return (
       <div ref="form-wrap" class="form-wrapper" id={id}>
-        <qm-form list={list} />
+        <div style="margin-bottom: -12px;">
+          <qm-form list={list} />
+        </div>
       </div>
     );
   },
@@ -72,12 +119,18 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .form-wrapper {
-  margin-bottom: -12px;
+  overflow: hidden;
+  &.actived {
+    background-color: $backgroundColor;
+  }
   :deep(.el-row) {
     min-height: 44px;
     .form-item {
       line-height: 32px;
       margin-left: 20px;
+    }
+    .el-col.actived {
+      background-color: $backgroundColor;
     }
   }
 }
