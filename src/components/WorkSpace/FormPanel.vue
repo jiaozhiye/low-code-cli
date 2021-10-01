@@ -86,12 +86,12 @@ export default defineComponent({
         const fieldName = $target.id;
         if (fieldName) {
           const name = this.list.find((x) => x.fieldName === fieldName).type;
-          this.createCurrentAction({ id: fieldName, name });
+          this.createCurrentAction({ id: this.id, name, fieldName });
         }
       }
     },
     dbClickHandle() {
-      this.createCurrentAction({ id: this.id, name: 'Form' });
+      this.createCurrentAction({ id: this.id, name: 'Form', fieldName: '' });
     },
     bindEvent() {
       this.dbClickEvent = addEventListener(this.$formWrap, 'dblclick', this.dbClickHandle);

@@ -2,7 +2,7 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 13:47:03
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-09-30 15:25:08
+ * @Last Modified time: 2021-10-01 20:19:00
  */
 import * as types from '../types';
 import { isEqual } from 'lodash';
@@ -26,6 +26,7 @@ type IState = {
   current: {
     id: string;
     name: string;
+    fieldName: string;
   };
 };
 
@@ -50,6 +51,7 @@ const state = {
   current: {
     id: '',
     name: '',
+    fieldName: '',
   },
 } as IState;
 
@@ -82,6 +84,13 @@ const actions = {
       id: params.id,
     });
   },
+  setFormItem({ commit, state }, params) {
+    commit({
+      type: types.FORM_ITEM,
+      data: params.data,
+      id: params.id,
+    });
+  },
 };
 
 // mutations
@@ -98,6 +107,11 @@ const mutations = {
   [types.FORM_PANEL](state, { data, id }) {
     const index = state.formPanelList.findIndex((x) => x.id === id);
     state.formPanelList.splice(index, 1, data);
+  },
+  [types.FORM_ITEM](state, { data, id }) {
+    const formItemList = state.formPanelList.find((x) => x.id === id).list;
+    const index = formItemList.findIndex((x) => x.fieldName === data.fieldName);
+    formItemList.splice(index, 1, data);
   },
 };
 

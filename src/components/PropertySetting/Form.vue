@@ -11,6 +11,11 @@ import omit from 'omit.js';
 
 import { dictionary } from '@/mixins/dictMixin'; // 数据字典
 
+const DEFAULT_VALUE = {
+  formType: 'default',
+  labelWidth: 80,
+};
+
 export default defineComponent({
   name: 'Form',
   props: ['id'],
@@ -23,23 +28,54 @@ export default defineComponent({
         ['id', 'name']
       );
     },
+    initialValue() {
+      return Object.assign({}, DEFAULT_VALUE, this.formParams);
+    },
   },
   data() {
     return {
       formList: this.createFormList(),
-      initialValue: this.formParams,
     };
   },
   methods: {
     ...mapActions('editer', ['setFormPanel']),
+    finedFormItem(fieldName) {
+      return this.formList.find((x) => x.fieldName === fieldName);
+    },
     createFormList() {
       return [
         {
           type: 'SELECT',
-          label: '类型',
+          label: '表单类型',
           fieldName: 'formType',
           options: {
             itemList: this.createDictList('formType'),
+          },
+          onChange: (val) => {
+            if (val === 'search') {
+              this.finedFormItem('uniqueKey').hidden = false;
+            } else {
+              this.finedFormItem('uniqueKey').hidden = true;
+            }
+            this.createFormPanel();
+          },
+        },
+        {
+          type: 'INPUT',
+          label: '唯一键值',
+          fieldName: 'uniqueKey',
+          hidden: true,
+          onChange: () => this.createFormPanel(),
+        },
+        {
+          type: 'INPUT_NUMBER',
+          label: '标签宽度',
+          fieldName: 'labelWidth',
+          descOptions: {
+            content: 'px',
+            style: {
+              width: '30px',
+            },
           },
           onChange: () => this.createFormPanel(),
         },
@@ -53,6 +89,15 @@ export default defineComponent({
         this.formPanelList.find((x) => x.id === this.id),
         res
       );
+      // 处理数据
+      for (const key in result) {
+        if (result[key] === DEFAULT_VALUE[key]) {
+          delete result[key];
+        }
+        if (result[key] === '') {
+          delete result[key];
+        }
+      }
       this.setFormPanel({ id: this.id, data: result });
     },
   },

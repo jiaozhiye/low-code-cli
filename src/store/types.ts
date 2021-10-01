@@ -31,3 +31,4 @@ export const FORM_PANEL_LIST = 'FORM_PANEL_LIST';
 export const FORM_ITEM_LIST = 'FORM_ITEM_LIST';
 export const CURRENT_ACTION = 'CURRENT_ACTION';
 export const FORM_PANEL = 'FORM_PANEL';
+export const FORM_ITEM = 'FORM_ITEM';
