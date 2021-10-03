@@ -17,8 +17,15 @@ export default defineComponent({
     FormRender() {
       return <Form id={this.id} />;
     },
-    INPUTRender() {
-      return <FormItem id={this.id} fieldName={this.current.fieldName} type="INPUT" />;
+    formItemRender(name) {
+      return (
+        <FormItem
+          key={`${this.id}_${this.current.fieldName}`}
+          id={this.id}
+          fieldName={this.current.fieldName}
+          type={name}
+        />
+      );
     },
     emptyRender() {
       return <qm-empty style="margin-top: 20vh;" />;
@@ -26,7 +33,10 @@ export default defineComponent({
   },
   render() {
     const { name } = this.current;
-    return <>{name ? this[`${name}Render`]() : this.emptyRender()}</>;
+    if (name === 'Form') {
+      return this.FormRender();
+    }
+    return <>{name ? this.formItemRender(name) : this.emptyRender()}</>;
   },
 });
 </script>
