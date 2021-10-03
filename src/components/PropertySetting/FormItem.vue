@@ -74,7 +74,9 @@ export default defineComponent({
           type: 'INPUT',
           label: '字段名',
           fieldName: 'fieldName',
-          onChange: () => this.createFormItem(),
+          onChange: (val) => {
+            this.createFormItem();
+          },
         },
         {
           type: 'INPUT',

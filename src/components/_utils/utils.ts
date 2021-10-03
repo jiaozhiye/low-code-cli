@@ -2,8 +2,11 @@
  * @Author: 焦质晔
  * @Date: 2021-10-03 14:22:24
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-10-03 14:38:15
+ * @Last Modified time: 2021-10-03 15:10:25
  */
+export const createFieldName = (): string => {
+  return `field-${(+new Date()).toString().slice(-4)}`;
+};
 function generateFlattenMap(source) {
   const map: Map<string, any> = new Map();
   for (const [key, value] of Object.entries(source)) {

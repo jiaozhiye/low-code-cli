@@ -35,6 +35,7 @@
 import { defineComponent } from 'vue';
 import { mapState, mapActions } from 'vuex';
 import { createUidKey, getParentNode } from '@/utils';
+import { createFieldName } from '../_utils/utils';
 
 import Draggable from 'vuedraggable';
 import FormSvg from '../SvgIcon/form.vue';
@@ -63,7 +64,9 @@ export default defineComponent({
       _list.splice(
         ev.newIndex,
         0,
-        Object.assign({}, this.formItemTemplate[ev.oldIndex], { fieldName: createUidKey() })
+        Object.assign({}, this.formItemTemplate[ev.oldIndex], {
+          fieldName: createFieldName(),
+        })
       );
       this.createFormItemList({ id: _id, list: _list });
     },
