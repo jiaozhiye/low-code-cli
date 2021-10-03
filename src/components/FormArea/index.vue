@@ -72,21 +72,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.divider {
-  line-height: 1.5;
-  position: relative;
-  padding-left: 12px;
-  font-size: $textSize;
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 5px;
-    background-color: $primaryColor;
-    border-radius: 1px;
-  }
-}
 .content {
   display: flex;
   padding: $modulePadding 0;

@@ -3,7 +3,7 @@ import { defineComponent } from 'vue';
 import { mapState } from 'vuex';
 
 import Form from './Form';
-import Input from './Input';
+import FormItem from './FormItem';
 
 export default defineComponent({
   name: 'PropertySetting',
@@ -18,7 +18,7 @@ export default defineComponent({
       return <Form id={this.id} />;
     },
     INPUTRender() {
-      return <Input id={this.id} fieldName={this.current.fieldName} />;
+      return <FormItem id={this.id} fieldName={this.current.fieldName} type="INPUT" />;
     },
     emptyRender() {
       return <qm-empty style="margin-top: 20vh;" />;

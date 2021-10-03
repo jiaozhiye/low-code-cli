@@ -2,7 +2,7 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 20:40:51
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-06-09 09:26:32
+ * @Last Modified time: 2021-10-03 09:01:49
  */
 /**
  * public
@@ -118,4 +118,20 @@ textarea:-ms-input-placeholder {
   padding: $modulePadding $modulePadding + 5px;
   background: #fff;
   text-align: right;
+}
+
+.divider {
+  line-height: 1.5;
+  position: relative;
+  padding-left: 12px;
+  font-size: $textSize;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    background-color: $primaryColor;
+    border-radius: 1px;
+  }
 }
