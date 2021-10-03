@@ -17,6 +17,7 @@
 import { defineComponent } from 'vue';
 import { mapState, mapActions } from 'vuex';
 import { set } from 'lodash-es';
+import { flatJson } from '../_utils/utils';
 import omit from 'omit.js';
 import { dictionary } from '@/mixins/dictMixin'; // 数据字典
 
@@ -47,9 +48,11 @@ export default defineComponent({
       );
     },
     initialValue2() {
-      return omit(
-        Object.assign({}, DEFAULT_VALUE, this.formItemParams),
-        this.formList.map((x) => x.fieldName)
+      return flatJson(
+        omit(
+          Object.assign({}, DEFAULT_VALUE, this.formItemParams),
+          this.formList.map((x) => x.fieldName)
+        )
       );
     },
   },
