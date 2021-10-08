@@ -26,7 +26,7 @@ type IState = {
   current: {
     id: string;
     name: string;
-    fieldName: string;
+    itemId: string;
   };
 };
 
@@ -51,7 +51,7 @@ const state = {
   current: {
     id: '',
     name: '',
-    fieldName: '',
+    itemId: '', // 用于 formItem
   },
 } as IState;
 
@@ -110,7 +110,7 @@ const mutations = {
   },
   [types.FORM_ITEM](state, { data, id }) {
     const formItemList = state.formPanelList.find((x) => x.id === id).list;
-    const index = formItemList.findIndex((x) => x.fieldName === data.fieldName);
+    const index = formItemList.findIndex((x) => x.itemId === data.itemId);
     formItemList.splice(index, 1, data);
   },
 };

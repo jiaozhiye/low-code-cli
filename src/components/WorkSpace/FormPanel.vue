@@ -57,14 +57,14 @@ export default defineComponent({
         },
       });
     },
-    createAvtive({ id, name }) {
-      if (id === this.id) {
+    createAvtive({ id, name, itemId }) {
+      if (id === this.id && !itemId) {
         return this.$formWrap.classList.add('actived');
       }
-      const item = this.list.find((x) => x.fieldName === id);
+      const item = this.list.find((x) => x.itemId === itemId);
       if (item?.type === name) {
         Array.from(this.$elRow.children)
-          .find((x) => x.id === id)
+          .find((x) => x.id === item.fieldName)
           .classList.add('actived');
       }
     },
@@ -85,13 +85,13 @@ export default defineComponent({
       if ($target && contains($target, ev.currentTarget)) {
         const fieldName = $target.id;
         if (fieldName) {
-          const name = this.list.find((x) => x.fieldName === fieldName).type;
-          this.createCurrentAction({ id: this.id, name, fieldName });
+          const { type, itemId } = this.list.find((x) => x.fieldName === fieldName);
+          this.createCurrentAction({ id: this.id, name: type, itemId });
         }
       }
     },
     dbClickHandle() {
-      this.createCurrentAction({ id: this.id, name: 'Form', fieldName: '' });
+      this.createCurrentAction({ id: this.id, name: 'Form', itemId: '' });
     },
     bindEvent() {
       this.dbClickEvent = addEventListener(this.$formWrap, 'dblclick', this.dbClickHandle);

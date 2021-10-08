@@ -20,9 +20,9 @@ export default defineComponent({
     formItemRender(name) {
       return (
         <FormItem
-          key={`${this.id}_${this.current.fieldName}`}
+          key={`${this.id}_${this.current.itemId}`}
           id={this.id}
-          fieldName={this.current.fieldName}
+          itemId={this.current.itemId}
           type={name}
         />
       );

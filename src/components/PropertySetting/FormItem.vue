@@ -29,17 +29,17 @@ const DEFAULT_VALUE = {
 
 export default defineComponent({
   name: 'FormItem',
-  props: ['id', 'fieldName', 'type'],
+  props: ['id', 'itemId', 'type'],
   mixins: [dictionary],
   computed: {
     ...mapState('editer', ['formPanelList']),
     formItem() {
       return this.formPanelList
         .find((x) => x.id === this.id)
-        .list.find((x) => x.fieldName === this.fieldName);
+        .list.find((x) => x.itemId === this.itemId);
     },
     formItemParams() {
-      return omit(this.formItem, []);
+      return omit(this.formItem, ['itemId']);
     },
     initialValue() {
       return omit(

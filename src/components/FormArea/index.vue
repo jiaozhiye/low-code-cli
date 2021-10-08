@@ -65,6 +65,7 @@ export default defineComponent({
         ev.newIndex,
         0,
         Object.assign({}, this.formItemTemplate[ev.oldIndex], {
+          itemId: createUidKey(),
           fieldName: createFieldName(),
         })
       );
