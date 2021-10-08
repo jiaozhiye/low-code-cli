@@ -74,6 +74,10 @@ export default defineComponent({
           type: 'INPUT',
           label: '字段名',
           fieldName: 'fieldName',
+          labelOptions: {
+            description: '字段名不能重复',
+          },
+          labelWidth: 80,
           onChange: (val) => {
             this.createFormItem();
           },
