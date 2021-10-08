@@ -1646,22 +1646,22 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
-"@webpack-cli/configtest@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.nlark.com/@webpack-cli/configtest/download/@webpack-cli/configtest-1.0.4.tgz?cache=0&sync_timestamp=1623071294753&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40webpack-cli%2Fconfigtest%2Fdownload%2F%40webpack-cli%2Fconfigtest-1.0.4.tgz#f03ce6311c0883a83d04569e2c03c6238316d2aa"
-  integrity sha1-8DzmMRwIg6g9BFaeLAPGI4MW0qo=
+"@webpack-cli/configtest@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/@webpack-cli/configtest/download/@webpack-cli/configtest-1.1.0.tgz#8342bef0badfb7dfd3b576f2574ab80c725be043"
+  integrity sha1-g0K+8Lrft9/TtXbyV0q4DHJb4EM=
 
-"@webpack-cli/info@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.nlark.com/@webpack-cli/info/download/@webpack-cli/info-1.3.0.tgz#9d78a31101a960997a4acd41ffd9b9300627fe2b"
-  integrity sha1-nXijEQGpYJl6Ss1B/9m5MAYn/is=
+"@webpack-cli/info@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmmirror.com/@webpack-cli/info/download/@webpack-cli/info-1.4.0.tgz#b9179c3227ab09cbbb149aa733475fcf99430223"
+  integrity sha1-uRecMierCcu7FJqnM0dfz5lDAiM=
   dependencies:
     envinfo "^7.7.3"
 
-"@webpack-cli/serve@^1.5.2":
-  version "1.5.2"
-  resolved "https://registry.nlark.com/@webpack-cli/serve/download/@webpack-cli/serve-1.5.2.tgz#ea584b637ff63c5a477f6f21604b5a205b72c9ec"
-  integrity sha1-6lhLY3/2PFpHf28hYEtaIFtyyew=
+"@webpack-cli/serve@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.npmmirror.com/@webpack-cli/serve/download/@webpack-cli/serve-1.6.0.tgz#2c275aa05c895eccebbfc34cfb223c6e8bd591a2"
+  integrity sha1-LCdaoFyJXszrv8NM+yI8bovVkaI=
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -2372,6 +2372,11 @@ colorette@^1.2.1, colorette@^1.2.2:
   resolved "https://registry.npm.taobao.org/colorette/download/colorette-1.2.2.tgz?cache=0&sync_timestamp=1614259647923&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcolorette%2Fdownload%2Fcolorette-1.2.2.tgz#cbcc79d5e99caea2dbf10eb3a26fd8b3e6acfa94"
   integrity sha1-y8x51emcrqLb8Q6zom/Ys+as+pQ=
 
+colorette@^2.0.10, colorette@^2.0.14:
+  version "2.0.16"
+  resolved "https://registry.npmmirror.com/colorette/download/colorette-2.0.16.tgz?cache=0&sync_timestamp=1633673138036&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcolorette%2Fdownload%2Fcolorette-2.0.16.tgz#713b9af84fdb000139f04546bd4a93f62a5085da"
+  integrity sha1-cTua+E/bAAE58EVGvUqT9ipQhdo=
+
 commander@*, commander@^7.0.0, commander@^7.1.0:
   version "7.2.0"
   resolved "https://registry.nlark.com/commander/download/commander-7.2.0.tgz?cache=0&sync_timestamp=1622446257852&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcommander%2Fdownload%2Fcommander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
@@ -3079,10 +3084,18 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0, end-of-stream@^1.4.1:
   dependencies:
     once "^1.4.0"
 
-enhanced-resolve@^5.0.0, enhanced-resolve@^5.8.0:
+enhanced-resolve@^5.0.0:
   version "5.8.2"
   resolved "https://registry.nlark.com/enhanced-resolve/download/enhanced-resolve-5.8.2.tgz?cache=0&sync_timestamp=1620663122954&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fenhanced-resolve%2Fdownload%2Fenhanced-resolve-5.8.2.tgz#15ddc779345cbb73e97c611cd00c01c1e7bf4d8b"
   integrity sha1-Fd3HeTRcu3PpfGEc0AwBwee/TYs=
+  dependencies:
+    graceful-fs "^4.2.4"
+    tapable "^2.2.0"
+
+enhanced-resolve@^5.8.3:
+  version "5.8.3"
+  resolved "https://registry.nlark.com/enhanced-resolve/download/enhanced-resolve-5.8.3.tgz#6d552d465cce0423f5b3d718511ea53826a7b2f0"
+  integrity sha1-bVUtRlzOBCP1s9cYUR6lOCansvA=
   dependencies:
     graceful-fs "^4.2.4"
     tapable "^2.2.0"
@@ -3116,10 +3129,10 @@ error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-es-module-lexer@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.nlark.com/es-module-lexer/download/es-module-lexer-0.7.1.tgz#c2c8e0f46f2df06274cdaf0dd3f3b33e0a0b267d"
-  integrity sha1-wsjg9G8t8GJ0za8N0/OzPgoLJn0=
+es-module-lexer@^0.9.0:
+  version "0.9.3"
+  resolved "https://registry.npmmirror.com/es-module-lexer/download/es-module-lexer-0.9.3.tgz?cache=0&sync_timestamp=1633645560577&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fes-module-lexer%2Fdownload%2Fes-module-lexer-0.9.3.tgz#6f13db00cc38417137daf74366f535c8eb438f19"
+  integrity sha1-bxPbAMw4QXE32vdDZvU1yOtDjxk=
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -6817,16 +6830,16 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webpack-cli@^4.8.0:
-  version "4.8.0"
-  resolved "https://registry.nlark.com/webpack-cli/download/webpack-cli-4.8.0.tgz#5fc3c8b9401d3c8a43e2afceacfa8261962338d1"
-  integrity sha1-X8PIuUAdPIpD4q/OrPqCYZYjONE=
+webpack-cli@^4.9.0:
+  version "4.9.0"
+  resolved "https://registry.npmmirror.com/webpack-cli/download/webpack-cli-4.9.0.tgz#dc43e6e0f80dd52e89cbf73d5294bcd7ad6eb343"
+  integrity sha1-3EPm4PgN1S6Jy/c9UpS8161us0M=
   dependencies:
     "@discoveryjs/json-ext" "^0.5.0"
-    "@webpack-cli/configtest" "^1.0.4"
-    "@webpack-cli/info" "^1.3.0"
-    "@webpack-cli/serve" "^1.5.2"
-    colorette "^1.2.1"
+    "@webpack-cli/configtest" "^1.1.0"
+    "@webpack-cli/info" "^1.4.0"
+    "@webpack-cli/serve" "^1.6.0"
+    colorette "^2.0.14"
     commander "^7.0.0"
     execa "^5.0.0"
     fastest-levenshtein "^1.0.12"
@@ -6843,26 +6856,26 @@ webpack-custom-theme@^1.0.10:
   dependencies:
     webpack-sources "*"
 
-webpack-dev-middleware@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.nlark.com/webpack-dev-middleware/download/webpack-dev-middleware-5.1.0.tgz#90a645b077e85f661c5bb967dc32adc3eceb5cfd"
-  integrity sha1-kKZFsHfoX2YcW7ln3DKtw+zrXP0=
+webpack-dev-middleware@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.npmmirror.com/webpack-dev-middleware/download/webpack-dev-middleware-5.2.1.tgz#97c948144349177856a3d2d9c612cc3fee180cf1"
+  integrity sha1-l8lIFENJF3hWo9LZxhLMP+4YDPE=
   dependencies:
-    colorette "^1.2.2"
+    colorette "^2.0.10"
     memfs "^3.2.2"
     mime-types "^2.1.31"
     range-parser "^1.2.1"
     schema-utils "^3.1.0"
 
-webpack-dev-server@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.nlark.com/webpack-dev-server/download/webpack-dev-server-4.2.0.tgz?cache=0&sync_timestamp=1631213964252&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fwebpack-dev-server%2Fdownload%2Fwebpack-dev-server-4.2.0.tgz#f669117e97f0acbee447a5b2eb70060b03f39dcb"
-  integrity sha1-9mkRfpfwrL7kR6Wy63AGCwPzncs=
+webpack-dev-server@^4.3.0:
+  version "4.3.1"
+  resolved "https://registry.npmmirror.com/webpack-dev-server/download/webpack-dev-server-4.3.1.tgz#759d3337f0fbea297fbd1e433ab04ccfc000076b"
+  integrity sha1-dZ0zN/D76il/vR5DOrBMz8AAB2s=
   dependencies:
     ansi-html-community "^0.0.8"
     bonjour "^3.5.0"
     chokidar "^3.5.1"
-    colorette "^1.2.2"
+    colorette "^2.0.10"
     compression "^1.7.4"
     connect-history-api-fallback "^1.6.0"
     del "^6.0.0"
@@ -6882,7 +6895,7 @@ webpack-dev-server@^4.2.0:
     spdy "^4.0.2"
     strip-ansi "^7.0.0"
     url "^0.11.0"
-    webpack-dev-middleware "^5.1.0"
+    webpack-dev-middleware "^5.2.1"
     ws "^8.1.0"
 
 webpack-log@^2.0.0:
@@ -6921,10 +6934,10 @@ webpack-sources@^3.2.0:
   resolved "https://registry.nlark.com/webpack-sources/download/webpack-sources-3.2.0.tgz#b16973bcf844ebcdb3afde32eda1c04d0b90f89d"
   integrity sha1-sWlzvPhE682zr94y7aHATQuQ+J0=
 
-webpack@^5.50.0:
-  version "5.50.0"
-  resolved "https://registry.nlark.com/webpack/download/webpack-5.50.0.tgz#5562d75902a749eb4d75131f5627eac3a3192527"
-  integrity sha1-VWLXWQKnSetNdRMfVifqw6MZJSc=
+webpack@^5.58.0:
+  version "5.58.0"
+  resolved "https://registry.npmmirror.com/webpack/download/webpack-5.58.0.tgz?cache=0&sync_timestamp=1633621905214&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fwebpack%2Fdownload%2Fwebpack-5.58.0.tgz#9ec621cf8534f23c25e779e7c35dfde1211d5ccb"
+  integrity sha1-nsYhz4U08jwl53nnw1394SEdXMs=
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.50"
@@ -6935,8 +6948,8 @@ webpack@^5.50.0:
     acorn-import-assertions "^1.7.6"
     browserslist "^4.14.5"
     chrome-trace-event "^1.0.2"
-    enhanced-resolve "^5.8.0"
-    es-module-lexer "^0.7.1"
+    enhanced-resolve "^5.8.3"
+    es-module-lexer "^0.9.0"
     eslint-scope "5.1.1"
     events "^3.2.0"
     glob-to-regexp "^0.4.1"
