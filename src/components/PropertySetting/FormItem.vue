@@ -1,7 +1,14 @@
 <template>
   <div>
     <h5 class="divider" style="margin-bottom: 8px">公共属性</h5>
-    <qm-form ref="form" :list="formList" :initialValue="initialValue" :labelWidth="66" :cols="1" />
+    <qm-form
+      ref="form"
+      :list="formList"
+      :initialValue="initialValue"
+      :labelWidth="66"
+      :cols="1"
+      :isAutoFocus="false"
+    />
     <h5 class="divider" style="margin-bottom: 8px">私有属性</h5>
     <qm-form
       ref="form2"
@@ -9,6 +16,7 @@
       :initialValue="initialValue2"
       :labelWidth="66"
       :cols="1"
+      :isAutoFocus="false"
     />
   </div>
 </template>
@@ -42,18 +50,10 @@ export default defineComponent({
       return omit(this.formItem, ['itemId']);
     },
     initialValue() {
-      return omit(
-        Object.assign({}, DEFAULT_VALUE, this.formItemParams),
-        this.formList2.map((x) => x.fieldName.split('.')[0])
-      );
+      return this.createInitialValue(this.formItemParams, this.formList2);
     },
     initialValue2() {
-      return flatJson(
-        omit(
-          Object.assign({}, DEFAULT_VALUE, this.formItemParams),
-          this.formList.map((x) => x.fieldName)
-        )
-      );
+      return this.createInitialValue(this.formItemParams, this.formList);
     },
   },
   data() {
@@ -65,6 +65,14 @@ export default defineComponent({
   methods: {
     ...mapActions('editer', ['setFormItem']),
     ...INPUTMethods,
+    createInitialValue(params, omitList) {
+      return flatJson(
+        omit(
+          Object.assign({}, DEFAULT_VALUE, params),
+          omitList.map((x) => x.fieldName.split('.')[0])
+        )
+      );
+    },
     finedFormItem(fieldName) {
       return this.formList.find((x) => x.fieldName === fieldName);
     },
@@ -103,7 +111,7 @@ export default defineComponent({
         {
           type: 'INPUT',
           label: 'tooltip',
-          fieldName: 'description',
+          fieldName: 'labelOptions.description',
           onChange: () => this.createFormItem(),
         },
         {
