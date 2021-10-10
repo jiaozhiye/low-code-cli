@@ -41,7 +41,7 @@ export default defineComponent({
     sortableHandle() {
       this.sortable = new Sortable(this.$elRow, {
         group: 'form-panel',
-        filter: '.btns',
+        filter: '.col-button',
         animation: 150,
         onEnd: (ev) => {
           const _list = [...this.list];

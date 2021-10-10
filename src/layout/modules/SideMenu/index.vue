@@ -98,13 +98,9 @@ export default defineComponent({
     .el-menu-item {
       height: 36px;
       line-height: 36px;
-      /* 文本溢出截断 */
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      * {
-        vertical-align: baseline;
-      }
     }
     .el-sub-menu {
       .el-sub-menu__title {
@@ -126,23 +122,20 @@ export default defineComponent({
         &:hover {
           background-color: $subMenuHover !important;
         }
-        &.is-active {
+      }
+      &.is-active {
+        > .el-sub-menu__title {
+          color: $subMenuActiveText;
+        }
+        .el-menu-item.is-active {
           color: $subMenuActiveText !important;
           background-color: $primaryColor !important;
         }
       }
     }
-  }
-  /* 导航菜单，不包含 我的收藏/常用导航 */
-  .app-aside__menu {
-    .el-menu {
-      .is-active {
-        & > .el-submenu__title {
-          color: $subMenuActiveText !important;
-          i {
-            color: $subMenuActiveText !important;
-          }
-        }
+    &.el-menu--collapse > .el-sub-menu.is-active {
+      > .el-sub-menu__title {
+        color: $primaryColor;
       }
     }
   }

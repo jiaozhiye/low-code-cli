@@ -31,7 +31,7 @@
     "src/**/*.{scss}": "prettier --write"
   },
   "dependencies": {
-    "@jiaozhiye/qm-design": "^1.1.0-beta.20",
+    "@jiaozhiye/qm-design": "^1.1.0-beta.22",
     "add-dom-event-listener": "^1.1.0",
     "axios": "^0.21.4",
     "crypto-js": "^4.1.0",
@@ -42,8 +42,8 @@
     "nprogress": "^0.2.0",
     "omit.js": "^2.0.2",
     "screenfull": "^5.1.0",
-    "vue": "^3.2.18",
-    "vue-i18n": "^9.2.0-beta.4",
+    "vue": "^3.2.20",
+    "vue-i18n": "^9.2.0-beta.11",
     "vue-router": "^4.0.11",
     "vuex": "^4.0.2"
   },
@@ -57,7 +57,7 @@
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
     "@vue/babel-plugin-jsx": "^1.1.0",
-    "@vue/compiler-sfc": "^3.2.18",
+    "@vue/compiler-sfc": "^3.2.20",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
