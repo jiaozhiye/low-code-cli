@@ -17,7 +17,7 @@
         </div>
         <div class="user-box">
           <div class="title">
-            <span class="text">公司名称</span>
+            <span class="text">{{ $t('app.settings.companyName') }}</span>
           </div>
           <div class="content">
             <span class="text_overflow_cut" :title="info.vDealerName"
@@ -27,10 +27,10 @@
         </div>
         <div class="user-box">
           <div class="title">
-            <span class="text">个人信息</span>
-            <router-link to="/user-center" class="more" @click="closePopperHandle"
-              >详细</router-link
-            >
+            <span class="text">{{ $t('app.settings.userInfo') }}</span>
+            <router-link to="/user-center" class="more" @click="closePopperHandle">{{
+              $t('app.button.details')
+            }}</router-link>
           </div>
           <div class="content">
             <li class="text_overflow_cut" :title="info.vLogin">
@@ -49,7 +49,7 @@
         </div>
         <div class="user-box">
           <div class="title">
-            <span class="text">系统角色</span>
+            <span class="text">{{ $t('app.settings.systemRole') }}</span>
           </div>
           <div class="content">
             <li v-for="text in info.vRoles" :key="text" class="text_overflow_cut" :title="text">
@@ -58,8 +58,8 @@
           </div>
         </div>
         <div class="user-action">
-          <span class="item" @click="clearCacheHandle">清理缓存</span>
-          <span class="item" @click="logoutHandle">退出登录</span>
+          <span class="item" @click="clearCacheHandle">{{ $t('app.settings.clearcache') }}</span>
+          <span class="item" @click="logoutHandle">{{ $t('app.settings.logout') }}</span>
         </div>
       </div>
       <template v-slot:reference>
@@ -90,7 +90,7 @@ export default defineComponent({
   data() {
     this.avatarImg = require('@/assets/img/avatar.jpg');
     return {
-      username: getUserName() ?? '管理员',
+      username: getUserName() ?? this.$t('app.settings.admin'),
       info: {
         profileUrl: '', // 头像
         vEmail: '', // Email

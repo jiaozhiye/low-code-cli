@@ -2,7 +2,7 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 13:18:02
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-09-29 09:55:47
+ * @Last Modified time: 2021-05-13 12:24:43
  */
 export default {
   name: 'zh-cn',
@@ -36,6 +36,10 @@ export default {
       usercenter: '个人中心',
       clearcache: '清理缓存',
       logout: '退出登录',
+      companyName: '公司名称',
+      userInfo: '个人信息',
+      systemRole: '系统角色',
+      admin: '管理员',
     },
     insideLetter: {
       notice: '通知',
@@ -97,7 +101,6 @@ export default {
       modify: '修改',
       details: '详情',
       view: '查看',
-      add: '新建',
       print: '打印',
       export: '导出',
       import: '导入',
@@ -107,7 +110,7 @@ export default {
       reset: '重置',
       save: '保存',
       clear: '清空',
-      action: '操作',
+      operation: '操作',
       preview: '预览',
     },
   },
