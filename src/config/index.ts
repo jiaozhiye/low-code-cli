@@ -6,7 +6,7 @@
  */
 import config from '../../config/app.conf';
 import { t } from '@/locale';
-import { ComponentSize, Language } from '@/utils/types';
+import type { ComponentSize, Language } from '@/utils/types';
 
 type IConfig = {
   system: string;

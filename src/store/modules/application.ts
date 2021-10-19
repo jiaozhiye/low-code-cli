@@ -22,7 +22,7 @@ import {
 // 自定义主题
 import client from 'webpack-custom-theme/client';
 import forElementUI from 'webpack-custom-theme/forElementUI';
-import { Dictionary, ComponentSize, Language, AnyObject, Nullable } from '@/utils/types';
+import type { Dictionary, ComponentSize, Language, AnyObject, Nullable } from '@/utils/types';
 
 type INavItem = {
   key: string;

@@ -2,10 +2,10 @@
  * @Author: 焦质晔
  * @Date: 2021-02-12 20:50:59
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-02-15 20:30:34
+ * @Last Modified time: 2021-10-19 10:13:21
  */
 import { defineComponent } from 'vue';
-import { JSXNode } from '../../_utils/types';
+import type { JSXNode } from '../../_utils/types';
 
 import '../style/index.scss';
 

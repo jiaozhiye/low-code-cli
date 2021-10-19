@@ -4,7 +4,7 @@
  * @Last Modified by: 焦质晔
  * @Last Modified time: 2021-09-30 14:10:23
  */
-import { Dictionary } from '@/utils/types';
+import type { Dictionary } from '@/utils/types';
 
 const localDict: Record<string, Array<Dictionary>> = {
   sex: [

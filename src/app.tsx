@@ -7,7 +7,8 @@
 import { defineComponent } from 'vue';
 import { mapState } from 'vuex';
 import { RouterView } from 'vue-router';
-import { SizeEnum, JSXNode } from '@/utils/types';
+import { SizeEnum } from '@/utils/types';
+import type { JSXNode } from '@/utils/types';
 
 import '@/assets/css/reset.scss';
 import '@/assets/css/style.scss';

@@ -13,9 +13,9 @@ import axios, {
 } from 'axios';
 import qs from 'qs';
 import store from '@/store';
+import { t } from '@/locale';
 import { getToken } from '@/utils/cookies';
 import { notifyAction } from '@/utils';
-import { t } from '@/locale';
 
 type IRequestConfig = AxiosRequestConfig & {
   cancelable?: boolean;

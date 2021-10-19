@@ -7,7 +7,7 @@
  */
 import { defineComponent } from 'vue';
 import { RouterView } from 'vue-router';
-import { JSXNode } from '@/utils/types';
+import type { JSXNode } from '@/utils/types';
 
 export default defineComponent({
   name: 'RouteView',

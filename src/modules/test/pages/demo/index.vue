@@ -70,7 +70,7 @@
  * @Author: 焦质晔
  * @Date: 2021-05-13 14:08:00
  * @Last Modified by: 焦质晔
- * @Last Modified time: 2021-09-16 22:06:21
+ * @Last Modified time: 2021-10-19 10:53:15
  */
 import './lang'; // 多语言
 import { dictionary } from '@/mixins/dictMixin'; // 数据字典
@@ -85,6 +85,8 @@ import {
 } from '@test/api/demo';
 import tableData from '@/mock/tableData';
 
+import { useDict, useLocale } from '@/hooks';
+
 import PrintTemplate from '../printTemplate/print-template';
 import AddInfo from './addInfo';
 
@@ -92,6 +94,11 @@ export default {
   name: 'Demo',
   components: { AddInfo },
   mixins: [dictionary],
+  setup() {
+    const { t } = useLocale();
+    const { createDictList, createDictText } = useDict();
+    return { t };
+  },
   data() {
     this.selectedKeys = [];
     this.printTemplate = PrintTemplate;

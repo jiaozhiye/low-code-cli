@@ -7,7 +7,7 @@
 import { QmMessageBox, QmNotification, QmMessage } from '@jiaozhiye/qm-design';
 import { debounce, throttle, round } from 'lodash-es';
 import { t } from '@/locale';
-import { AnyFunction, Nullable } from './types';
+import type { AnyFunction, Nullable } from './types';
 
 /**
  * @description 判断对象属性是否为自身属性

@@ -8,7 +8,7 @@
 import { defineComponent } from 'vue';
 import config from '@/config';
 import { currentSize } from '@/mixins/sizeMixin';
-import { JSXNode } from '@/utils/types';
+import type { JSXNode } from '@/utils/types';
 
 import AppHeader from '@/components/AppHeader';
 import AppMain from '@/components/AppMain';

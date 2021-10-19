@@ -8,9 +8,10 @@
 import { defineComponent, KeepAlive } from 'vue';
 import { mapState, mapActions } from 'vuex';
 import { RouterView } from 'vue-router';
-import { JSXNode } from '@/utils/types';
-import GlobalLayout from './GlobalLayout';
+import type { JSXNode } from '@/utils/types';
+
 import config from '@/config';
+import GlobalLayout from './GlobalLayout';
 
 export default defineComponent({
   name: 'BasicLayout',
